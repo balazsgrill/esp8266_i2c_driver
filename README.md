@@ -1,10 +1,8 @@
 esp8266 i2c driver
 
-This driver is far from perfect and still needs work, if you have any idears or questions please create a issue.
+I've reduced the public API of zarya's i2c driver to just *i2c_readRegister()*, *i2c_writeRegister()* and *i2c_init()*
 
-```
-cd driver/
-git clone https://github.com/zarya/esp8266_i2c_driver.git i2c
-```
 * Add ```#include "i2c/i2c.h"``` to your code
-* Add ```driver/i2c``` to the MODULES line in the makefile
+* Add ```driver/i2c``` (or whatever you name this folder to) to the MODULES line in the makefile
+
+You will also need to include the [easygpio](https://github.com/eadf/esp8266_easygpio) library to your project.
