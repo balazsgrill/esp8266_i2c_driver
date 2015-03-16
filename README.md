@@ -1,6 +1,9 @@
-esp8266 i2c driver
+esp8266 I²C driver
 
-I've reduced the public API of zarya's i2c driver to just  ```i2c_readRegister()```,  ```i2c_writeRegister()``` and  ```i2c_init()```.
+This driver has been superseded by [this I²C driver](https://github.com/eadf/esp8266_i2c_master).
+
+
+I've reduced the public API of zarya's I²C driver to just  ```i2c_readRegister()```,  ```i2c_writeRegister()``` and  ```i2c_init()```.
 
 The driver uses two arbitrary pins, just give ```i2c_init()``` the pin numbers and it will connect the dots.
 
