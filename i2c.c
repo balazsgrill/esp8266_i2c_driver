@@ -117,6 +117,33 @@ i2c_readRegister(I2C_Self *self, uint8_t deviceAddr, uint8_t regAddr, uint8_t *r
 }
 
 /**
+ * Reads a single byte
+ */
+bool ICACHE_FLASH_ATTR
+i2c_read(I2C_Self *self, uint8_t addr, uint8_t *value) {
+  bool rv = true;
+
+  rv &= i2c_beginTransmission(self, addr, true);
+  rv &= i2c_readByteCheckAck(self, value);
+  i2c_stop(self);
+  return rv;
+}
+
+/**
+ * Send a single byte
+ */
+bool ICACHE_FLASH_ATTR
+i2c_write(I2C_Self *self, uint8_t addr, uint8_t value) {
+  bool rv = true;
+
+  // Write the register
+  rv &= i2c_beginTransmission(self, addr, false);
+  rv &= i2c_writeByteCheckAck(self, value);
+  i2c_stop(self);
+  return rv;
+}
+
+/**
  * Writes a given register
  */
 bool ICACHE_FLASH_ATTR
