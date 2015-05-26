@@ -47,4 +47,14 @@ bool i2c_writeRegister(I2C_Self *self, uint8_t deviceAddr, uint8_t regAddr, uint
  */
 bool i2c_init(I2C_Self* self, uint8_t scl_pin, uint8_t sda_pin);
 
+/**
+ * reads a single byte
+ */
+bool i2c_read(I2C_Self *self, uint8_t addr, uint8_t *value);
+
+/**
+ * writes a single byte
+ */
+bool i2c_write(I2C_Self *self, uint8_t addr, uint8_t value);
+
 #endif
