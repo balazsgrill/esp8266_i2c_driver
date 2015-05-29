@@ -45,7 +45,7 @@ bool i2c_writeRegister(I2C_Self *self, uint8_t deviceAddr, uint8_t regAddr, uint
 /**
  * Reads a given 16-bit register
  */
-bool i2c_readWordRegister(I2C_Self *self, uint8_t deviceAddr, uint8_t regAddr, uint16_t *regValue)
+bool i2c_readWordRegister(I2C_Self *self, uint8_t deviceAddr, uint8_t regAddr, uint16_t *regValue);
 
 /**
  * initiates the GPIO pins and fills the I2C_Self struct
